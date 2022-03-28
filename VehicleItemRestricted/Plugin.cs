@@ -20,9 +20,9 @@ namespace VehicleItemRestricted
 
         protected override void Load()
         {
-            // VehicleManager.onSwapSeatRequested += sitVeh3;//когда чел пересаживается на другое сидение
-            // VehicleManager.OnToggledVehicleLock += sitVeh4;//Когда чел закрывает тачку
-            // VehicleManager.onSiphonVehicleRequested += sitVeh;//когда чел открывает тачку отмычкой
+            // VehicleManager.onSwapSeatRequested += sitVeh3;
+            // VehicleManager.OnToggledVehicleLock += sitVeh4;
+            // VehicleManager.onSiphonVehicleRequested += sitVeh;
             VehicleManager.onEnterVehicleRequested += EnterVehicle;
             UnturnedPlayerEvents.OnPlayerInventoryAdded += InventoryAdd;
             Rocket.Core.Logging.Logger.Log("Plugin has been loaded!");
@@ -57,13 +57,13 @@ namespace VehicleItemRestricted
 
         public  bool  TryGetVehicle(UnturnedPlayer uPlayer, int vehicleId)
         {
-            foreach(var group in Configuration.Instance.CanSeatOnTheTransport)//Проходим по списку CanSeatOnTheTransport 
+            foreach(var group in Configuration.Instance.CanSeatOnTheTransport)
             {
-                foreach (var permGroup in R.Permissions.GetGroups(uPlayer, false))//проходим по всем группас указанные в пермижене для маслёнка(default,fireMan)
+                foreach (var permGroup in R.Permissions.GetGroups(uPlayer, false))
                 {
                     try
                     {
-                        if (group.idGroup.ToLower() != permGroup.Id.ToLower()) continue;//если группы конфига нету в пермижен,то пробуем другую группу
+                        if (group.idGroup.ToLower() != permGroup.Id.ToLower()) continue;
 
                         if (group.IsInWhiteList(vehicleId)) return true;
                     }
