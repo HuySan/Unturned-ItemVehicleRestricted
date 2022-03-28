@@ -1,17 +1,26 @@
 ﻿using Rocket.API;
+using System;
 using System.Collections.Generic;
-using carPermission.Types;
-
-namespace vehiclePermission
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using VehicleItemRestricted.Types;
+using System.Xml.Serialization;
+namespace VehicleItemRestricted
 {
     public class Configuration : IRocketPluginConfiguration
     {
-        public List<Settings> CanSeatOnTheTransport;
+        public List<SettingsForVehicle> CanSeatOnTheTransport;
+        public SettingsForItem settingsForItem = new SettingsForItem();
+
+        public bool ignoreAdmins;
         public void LoadDefaults()
         {
-            CanSeatOnTheTransport = new List<Settings>
+            ignoreAdmins = true;
+
+            CanSeatOnTheTransport = new List<SettingsForVehicle>
             {
-                new Settings
+                new SettingsForVehicle
                 {
                     idGroup = "default",
                     WhiteList = new List<int>
@@ -20,7 +29,7 @@ namespace vehiclePermission
                         123,
                     }
                 },
-                new Settings
+                new SettingsForVehicle
                 {
                     idGroup = "police",
                     WhiteList = new List<int>
@@ -30,7 +39,7 @@ namespace vehiclePermission
                         108,
                     }
                 },
-                new Settings
+                new SettingsForVehicle
                 {
                     idGroup = "fireman",
                     WhiteList = new List<int>
@@ -38,6 +47,14 @@ namespace vehiclePermission
                         34,
                     }
                 },
+            };
+ 
+            settingsForItem.BlackList = new List<int>
+            {
+                1041,
+                1043,
+                1300,
+                1394,
             };
         }
     }

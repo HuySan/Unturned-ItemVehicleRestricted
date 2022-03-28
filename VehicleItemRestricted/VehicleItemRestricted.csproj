@@ -7,8 +7,8 @@
     <ProjectGuid>{DF1F88CA-C097-4D72-A0EB-4B28F820A902}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>carPermission</RootNamespace>
-    <AssemblyName>carPermission</AssemblyName>
+    <RootNamespace>VehicleItemRestricted</RootNamespace>
+    <AssemblyName>VehicleItemRestricted</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -80,7 +80,8 @@
     <Compile Include="Configuration.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Types\Settings.cs" />
+    <Compile Include="Types\SettingsForItem.cs" />
+    <Compile Include="Types\SettingsForVehicle.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

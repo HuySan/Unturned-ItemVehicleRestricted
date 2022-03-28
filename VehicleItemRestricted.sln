@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vehiclePermission", "carPermission\vehiclePermission.csproj", "{DF1F88CA-C097-4D72-A0EB-4B28F820A902}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleItemRestricted", "VehicleItemRestricted\VehicleItemRestricted.csproj", "{DF1F88CA-C097-4D72-A0EB-4B28F820A902}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
